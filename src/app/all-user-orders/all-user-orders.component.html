@@ -1,0 +1,24 @@
+<div>
+  <div class="panel">
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Status</th>
+        <th>Created When</th>
+        <th>Comments</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of mass | paginate: {itemsPerPage:7, currentPage: p}">
+        <td>{{item.id}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.createdWhen}}</td>
+        <td>{{item.comments}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <pagination-controls (pageChange)="p =$event"></pagination-controls>
+</div>
