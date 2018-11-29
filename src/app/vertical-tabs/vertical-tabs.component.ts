@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SessionService} from '../session.service';
-import {Tabs} from '../tabs';
+import {Tab} from '../tab';
 
 @Component({
   selector: 'app-vertical-tabs',
@@ -8,7 +8,7 @@ import {Tabs} from '../tabs';
   styleUrls: ['./vertical-tabs.component.css']
 })
 export class VerticalTabsComponent implements OnInit {
-  items: Tabs[] = [];
+  items: Tab[] = [];
   public selectedRole: string = 'USER';
 
 

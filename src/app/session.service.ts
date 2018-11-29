@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Tabs} from './tabs';
+import {Tab} from './tab';
 import {ActivatedRoute} from '@angular/router';
 
 @Injectable({
@@ -7,10 +7,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class SessionService {
   //public selectedRole: string = 'USER';
-  private tabFilter: Tabs[];
+  private tabFilter: Tab[];
 
-  private dataTabs: Tabs[] = [
-    {myId: 1, name: 'My Orders', myRole: 'USER', url: ''},
+  private dataTabs: Tab[] = [
+    {myId: 1, name: 'My Orders', myRole: 'USER', url: '/my-orders'},
     {myId: 2, name: 'My Page-2', myRole: 'ADMIN', url: ''},
     {myId: 3, name: 'My Page-3', myRole: 'KEEPER', url: ''},
     {myId: 4, name: 'My Page-4', myRole: 'USER', url: ''},
@@ -19,8 +19,8 @@ export class SessionService {
     {myId: 7, name: 'My Page-7', myRole: 'USER', url: ''}
   ]
 
-  getTabsByRole(selectedRole): Tabs[] {
-    this.tabFilter = this.dataTabs.filter((viewTab: Tabs) => viewTab.myRole === selectedRole);
+  getTabsByRole(selectedRole): Tab[] {
+    this.tabFilter = this.dataTabs.filter((viewTab: Tab) => viewTab.myRole === selectedRole);
     return this.dataTabs = this.tabFilter;
   }
 }

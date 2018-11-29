@@ -1,10 +1,11 @@
-<div id="vert-tabs">
+<div class="list">
   <ul>
     <li *ngFor="let tab of items">
       <!--[class.selected]="tab === selectTab"-->
       <!--(click)="onSelect(tab)">-->
-      <span>{{tab.name}}</span>
+      <a href="{{tab.url}}" class="list-item">{{tab.name}}</a>
     </li>
   </ul>
 </div>
+
 

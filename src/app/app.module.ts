@@ -11,6 +11,7 @@ import {AllUserOrdersComponent} from './all-user-orders/all-user-orders.componen
 import {MyOrdersPageComponent} from './my-orders-page/my-orders-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule} from '@angular/forms';
+// import {ToolTipModule} from 'angular2-tooltip';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     NgxPaginationModule
+    // ,    ToolTipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
