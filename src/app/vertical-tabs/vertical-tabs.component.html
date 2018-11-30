@@ -1,9 +1,10 @@
 <div class="list">
-  <ul>
+  <ul class="listTabs">
     <li *ngFor="let tab of items">
-      <!--[class.selected]="tab === selectTab"-->
-      <!--(click)="onSelect(tab)">-->
-      <a href="{{tab.url}}" class="list-item">{{tab.name}}</a>
+      <!--[class.selected]="tab === selectedTab"-->
+      <!--(click)="onSelect(tab)"-->
+      <!--<span class="badge"><a href="{{tab.url}}">{{tab.name}}</a></span>-->
+      <span class="badge"><a routerLink="{{tab.url}}">{{tab.name}}</a></span>
     </li>
   </ul>
 </div>

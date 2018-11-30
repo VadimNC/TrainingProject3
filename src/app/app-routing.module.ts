@@ -1,17 +1,13 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {VerticalTabsComponent} from './vertical-tabs/vertical-tabs.component';
+import {MyOrdersPageComponent} from './my-orders-page/my-orders-page.component';
 
-const routes: Routes = [];
-
-// const routes: Routes = [
-//   { path: '', redirectTo: '/', pathMatch: 'full' },
-//   { path: '', component: TabsPanelComponent },
-//   { path: 'my-orders', component: MainPageComponent },
-//   { path: 'second', component: MainPageComponent },
-//   { path: 'third', component: MainPageComponent },
-//   { path: 'fourth', component: MainPageComponent },
-//   { path: 'fifth', component: MainPageComponent },
-// ];
+const routes: Routes = [
+  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', component: VerticalTabsComponent},
+  {path: 'my-orders', component: MyOrdersPageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

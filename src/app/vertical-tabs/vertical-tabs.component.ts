@@ -10,6 +10,7 @@ import {Tab} from '../tab';
 export class VerticalTabsComponent implements OnInit {
   items: Tab[] = [];
   public selectedRole: string = 'USER';
+  public selectedTab: Tab;
 
 
   constructor(private sessionService: SessionService) {
@@ -19,11 +20,12 @@ export class VerticalTabsComponent implements OnInit {
   //   this.sessionService.getTabsByRole();
   // }
 
-  // onSelect(tab: Tabs): void {
-  //   this.selectTab = tab;
+  // onSelect(tab: Tab): void {
+  //   this.selectedTab = tab;
   // }
 
-  ngOnInit() {
+  ngOnInit(tab: Tab) {
+    this.selectedTab = tab;
     this.items = this.sessionService.getTabsByRole(this.selectedRole);
   }
 

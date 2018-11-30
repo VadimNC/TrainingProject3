@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {OrdersService} from '../orders.service';
 import {Order} from '../order';
+import {Tab} from "../tab";
 
 @Component({
   selector: 'app-all-user-orders',
