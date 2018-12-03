@@ -24,8 +24,10 @@ export class VerticalTabsComponent implements OnInit {
   //   this.selectedTab = tab;
   // }
 
-  ngOnInit(tab: Tab) {
-    this.selectedTab = tab;
+  ngOnInit(
+    // tab: Tab
+  ) {
+    //this.selectedTab = tab;
     this.items = this.sessionService.getTabsByRole(this.selectedRole);
   }
 

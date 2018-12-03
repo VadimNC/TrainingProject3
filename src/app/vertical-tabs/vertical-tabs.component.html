@@ -4,7 +4,9 @@
       <!--[class.selected]="tab === selectedTab"-->
       <!--(click)="onSelect(tab)"-->
       <!--<span class="badge"><a href="{{tab.url}}">{{tab.name}}</a></span>-->
-      <span class="badge"><a routerLink="{{tab.url}}">{{tab.name}}</a></span>
+      <a routerLink="{{tab.url}}">
+      <span>{{tab.name}}</span>
+      </a>
     </li>
   </ul>
 </div>

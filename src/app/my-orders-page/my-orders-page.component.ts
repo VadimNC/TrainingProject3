@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Tab} from '../tab';
+import {ActivatedRoute} from '@angular/router';
 import {AllUserOrdersComponent} from '../all-user-orders/all-user-orders.component';
+import {OrdersService} from '../orders.service';
 
 @Component({
   selector: 'app-my-orders-page',
@@ -7,8 +10,12 @@ import {AllUserOrdersComponent} from '../all-user-orders/all-user-orders.compone
   styleUrls: ['./my-orders-page.component.css']
 })
 export class MyOrdersPageComponent implements OnInit {
+  public tab: Tab;
 
-  constructor() { }
+  // constructor(private route: ActivatedRoute,
+  //             private ordersService: OrdersService) {
+  // }
+
 
   ngOnInit() {
   }
