@@ -23,13 +23,13 @@ main {
 }
 
 article {
-  /*background-color: #546e7a;*/
-  background-color: gainsboro;
-  flex: 2 2 12em;
-  padding: 1em;
-  height: 100%;
-  /*border-style: solid;*/
-}
+   /*background-color: #546e7a;*/
+   background-color: gainsboro;
+   flex: 2 2 12em;
+   padding: 1em;
+   height: 100%;
+   /*border-style: solid;*/
+ }
 
 nav {
   flex: 1;

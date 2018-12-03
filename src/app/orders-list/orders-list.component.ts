@@ -11,15 +11,22 @@ import {ActivatedRoute} from '@angular/router';
   providers: [OrdersService]
 })
 export class OrdersListComponent implements OnInit {
-  mass: Order[];
-  tab: Tab;
+  orders: Order[];
+
+  // tab: Tab;
 
   constructor(private route: ActivatedRoute,
               private ordersService: OrdersService) {
   }
 
   ngOnInit() {
-    this.mass = this.ordersService.getAllUserOrders();
+    this.getOrders();
+    // this.mass = this.ordersService.getAllUserOrders();
+    // this.ordersService.getAllUserOrders().subscribe(orders => this.orders = orders);
+  }
+
+  getOrders(): void {
+    this.ordersService.getAllUserOrders().subscribe(orders => this.orders = orders);
   }
 
 }

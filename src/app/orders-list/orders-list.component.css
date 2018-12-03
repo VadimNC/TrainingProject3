@@ -1,4 +1,5 @@
 .table {
+
   /*background-color: #546e7a;*/
 }
 
@@ -11,23 +12,27 @@
 /*height: 50px;*/
 
 /*}*/
+
 .tooltip {
   position: relative;
   display: inline-block;
   /*border-bottom: 1px dotted black;*/
 }
-.table-striped_col1{
-  width: 55px;
+
+table, th, td {
+  color: black;
+  font-family: verdana, arial, sans-serif;
+  /*border: 1px solid black;*/
 }
-.table-striped_col2{
-  width: 110px;
-}
-.table-striped_col3{
-  width: 110px;
-}
-.table-striped_col4{
-  width: 150px;
-}
+/*.table-striped_col2{*/
+  /*width: 10em !important;*/
+/*}*/
+/*.table-striped_col3{*/
+  /*width: 10em !important;*/
+/*}*/
+/*.table-striped_col4{*/
+  /*width: 10em !important;*/
+/*}*/
 
 .tooltip .tooltiptext {
   visibility: hidden;

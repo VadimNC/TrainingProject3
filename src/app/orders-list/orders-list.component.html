@@ -1,3 +1,47 @@
+<!--<div>-->
+  <!--<div class="table">-->
+
+    <!--<table>-->
+
+      <!--<thead>-->
+      <!--<tr>-->
+        <!--<th>Id</th>-->
+        <!--<th>Status</th>-->
+        <!--<th>Created When</th>-->
+        <!--<th>Comments</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+      <!--<tr>-->
+        <!--<div *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p}">-->
+          <!--&lt;!&ndash;<a routerLink="/detail/{{item.id}}">&ndash;&gt;-->
+
+            <!--<td class="table-striped_col1">{{item.id}}</td>-->
+
+            <!--<td class="table-striped_col2">-->
+              <!--<div *ngIf="item.status==='Open'; else blockClosed">-->
+                <!--<span class="table__status_green">{{item.status}}</span>-->
+              <!--</div>-->
+              <!--<ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>-->
+            <!--</td>-->
+
+            <!--<td class="table-striped_col3">{{item.createdWhen}}</td>-->
+
+            <!--<td class="table-striped_col4">-->
+              <!--<div class="tooltip">{{item.comments | slice:0:60}}-->
+                <!--<span class="tooltiptext">{{item.comments}}</span>-->
+              <!--</div>-->
+            <!--</td>-->
+
+          <!--&lt;!&ndash;</a>&ndash;&gt;-->
+        <!--</div>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</div>-->
+  <!--<pagination-controls (pageChange)="p =$event"></pagination-controls>-->
+<!--</div>-->
+
 <div >
   <div class="table">
 
@@ -12,13 +56,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of mass | paginate: {itemsPerPage:12, currentPage: p}">
+      <tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p}">
+        <!--<a routerLink="/detail/{{item.id}}">-->
         <td class="table-striped_col1">{{item.id}}</td>
         <td class="table-striped_col2">
+          <a routerLink="/detail/{{item.id}}">
           <div *ngIf="item.status==='Open'; else blockClosed">
             <span class="table__status_green">{{item.status}}</span>
           </div>
           <ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>
+          </a>
         </td>
         <td class="table-striped_col3">{{item.createdWhen}}</td>
         <td class="table-striped_col4">
@@ -26,6 +73,7 @@
             <span class="tooltiptext">{{item.comments}}</span>
           </div>
         </td>
+        <!--</a>-->
       </tr>
       </tbody>
     </table>
