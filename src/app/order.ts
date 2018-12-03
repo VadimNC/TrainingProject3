@@ -1,8 +1,8 @@
 export class Order {
-  constructor(id: number,
-              name: string,
-              status: string,
-              createdWhen: string,
-              comments: string) {
+  constructor(public id: number,
+              public name: string,
+              public status: string,
+              public createdWhen: string,
+              public comments: string) {
   }
 }

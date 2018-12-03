@@ -1,7 +1,7 @@
 export class Tab {
-  constructor(myId: number,
-              name: string,
-              myRole: string,
-              url: string) {
+  constructor(public myId: number,
+              public name: string,
+              public myRole: string,
+              public url: string) {
   }
 }

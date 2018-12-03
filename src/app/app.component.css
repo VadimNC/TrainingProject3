@@ -20,6 +20,7 @@ main {
   display: flex;
   /*background-color: #546e7a;*/
   background-color: #3d424d;
+  width: 220px;
 }
 
 article {
@@ -64,8 +65,10 @@ header, footer {
 .box-1{
   flex: 1;
   order: 1;
+  /*width: 220px;*/
+
 }
 .box-2{
-  flex: 6;
+  flex: 7.65;
   order: 2;
 }

@@ -1,9 +1,6 @@
-#header {
-  text-align: center;
-  /*border-style: solid;*/
-  border-color: blue;
-  height: 100px;
-}
 .nav-wrapper{
   background-color: #2a2c34;
+}
+.brand-logo right{
+  font-size: 1rem !important;
 }
