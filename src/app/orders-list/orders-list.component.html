@@ -1,82 +1,62 @@
-<!--<div>-->
-  <!--<div class="table">-->
-
-    <!--<table>-->
-
-      <!--<thead>-->
-      <!--<tr>-->
-        <!--<th>Id</th>-->
-        <!--<th>Status</th>-->
-        <!--<th>Created When</th>-->
-        <!--<th>Comments</th>-->
-      <!--</tr>-->
-      <!--</thead>-->
-      <!--<tbody>-->
-      <!--<tr>-->
-        <!--<div *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p}">-->
-          <!--&lt;!&ndash;<a routerLink="/detail/{{item.id}}">&ndash;&gt;-->
-
-            <!--<td class="table-striped_col1">{{item.id}}</td>-->
-
-            <!--<td class="table-striped_col2">-->
-              <!--<div *ngIf="item.status==='Open'; else blockClosed">-->
-                <!--<span class="table__status_green">{{item.status}}</span>-->
-              <!--</div>-->
-              <!--<ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>-->
-            <!--</td>-->
-
-            <!--<td class="table-striped_col3">{{item.createdWhen}}</td>-->
-
-            <!--<td class="table-striped_col4">-->
-              <!--<div class="tooltip">{{item.comments | slice:0:60}}-->
-                <!--<span class="tooltiptext">{{item.comments}}</span>-->
-              <!--</div>-->
-            <!--</td>-->
-
-          <!--&lt;!&ndash;</a>&ndash;&gt;-->
-        <!--</div>-->
-      <!--</tr>-->
-      <!--</tbody>-->
-    <!--</table>-->
-  <!--</div>-->
-  <!--<pagination-controls (pageChange)="p =$event"></pagination-controls>-->
-<!--</div>-->
-
-<div >
+<div>
   <div class="table">
-
-    <table class="table table-striped">
+    <table>
 
       <thead>
       <tr>
-        <th>Id</th>
-        <th>Status</th>
-        <th>Created When</th>
-        <th>Comments</th>
+        <th *ngFor="let item of inputColumn">{{item.name}}</th>
       </tr>
       </thead>
+
+      <!--<tbody>-->
+      <!--<tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p}" routerLink="/detail/{{item.id}}">-->
+      <!--<td>{{item.id}}</td>-->
+      <!--<td>-->
+      <!--<div *ngIf="item.status==='Open'; else blockClosed">-->
+      <!--<span>{{item.status}}</span>-->
+      <!--</div>-->
+      <!--<ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>-->
+      <!--</td>-->
+      <!--<td>{{item.createdWhen}}</td>-->
+      <!--<td>-->
+      <!--<div class="tooltip">{{item.comments | slice:0:60}}-->
+      <!--<span class="tooltiptext">{{item.comments}}</span>-->
+      <!--</div>-->
+      <!--</td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+
       <tbody>
-      <tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p}">
-        <!--<a routerLink="/detail/{{item.id}}">-->
-        <td class="table-striped_col1">{{item.id}}</td>
-        <td class="table-striped_col2">
-          <a routerLink="/detail/{{item.id}}">
+      <tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p} " >
+        <!--routerLink="/detail/{{item.id}}"-->
+        <td *ngFor="let ttt of inputColumn"  routerLink="/detail/{{item.id}}">
+          <div *ngIf="item[ttt.id]; else dynamicTemplate"  >{{item[ttt.id] }}</div>
+
+          <div *ngIf="ttt.comments==='Comments'; else blockClosed2">
+            <div class="tooltip">{{item.comments | slice:0:60}}
+              <span class="tooltiptext">{{item.comments}}</span>
+            </div>
+            <ng-template #blockClosed2><span> </span></ng-template>
+          </div>
+
+          <div *ngIf="ttt.name==='Status'">
           <div *ngIf="item.status==='Open'; else blockClosed">
-            <span class="table__status_green">{{item.status}}</span>
+          <span class="table__status_green">{{item.status}}</span>
           </div>
           <ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>
-          </a>
-        </td>
-        <td class="table-striped_col3">{{item.createdWhen}}</td>
-        <td class="table-striped_col4">
-          <div class="tooltip">{{item.comments | slice:0:60}}
-            <span class="tooltiptext">{{item.comments}}</span>
           </div>
+
+
+
         </td>
-        <!--</a>-->
+        <ng-template #dynamicTemplate [ngTemplateOutlet]="dynamicColumn"> </ng-template>
       </tr>
       </tbody>
+
     </table>
+
   </div>
   <pagination-controls (pageChange)="p =$event"></pagination-controls>
 </div>
+
+<!--| paginate: {itemsPerPage:12, currentPage: p}" routerLink="/detail/{{item.id}}-->

@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {OrdersService} from '../orders.service';
 import {Order} from '../order';
-import {Tab} from '../tab';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -11,22 +10,14 @@ import {ActivatedRoute} from '@angular/router';
   providers: [OrdersService]
 })
 export class OrdersListComponent implements OnInit {
-  orders: Order[];
+  @Input() orders: Order[];
+  @Input() inputColumn: { id: number; name: string; status: string; createdWhen: string; comments: string; }[];
+  @Input() dynamicColumn: any;
 
-  // tab: Tab;
-
-  constructor(private route: ActivatedRoute,
-              private ordersService: OrdersService) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.getOrders();
-    // this.mass = this.ordersService.getAllUserOrders();
-    // this.ordersService.getAllUserOrders().subscribe(orders => this.orders = orders);
-  }
-
-  getOrders(): void {
-    this.ordersService.getAllUserOrders().subscribe(orders => this.orders = orders);
   }
 
 }

@@ -37,6 +37,9 @@ body {
   width: 15em;
   height: 3em;
 }
+img{
+  margin: 0 7px 0 2px;
+}
 
 .listTabs li {
   text-align: left;

@@ -11,7 +11,7 @@ export class SessionService {
 
   private dataTabs: Tab[] = [
     {myId: 1, name: 'My Orders', myRole: 'USER', url: '/my-orders'},
-    {myId: 2, name: 'My Page-2', myRole: 'ADMIN', url: ''},
+    {myId: 2, name: 'All My Orders', myRole: 'ADMIN', url: '/all-my-orders'},
     {myId: 3, name: 'My Page-3', myRole: 'KEEPER', url: ''},
     {myId: 4, name: 'My Page-4', myRole: 'USER', url: ''},
     {myId: 5, name: 'My Page-5', myRole: 'ADMIN', url: ''},

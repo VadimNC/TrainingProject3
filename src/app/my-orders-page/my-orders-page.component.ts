@@ -3,6 +3,7 @@ import {Tab} from '../tab';
 import {ActivatedRoute} from '@angular/router';
 import {AllUserOrdersComponent} from '../all-user-orders/all-user-orders.component';
 import {OrdersService} from '../orders.service';
+import {Order} from '../order';
 
 @Component({
   selector: 'app-my-orders-page',
@@ -11,13 +12,14 @@ import {OrdersService} from '../orders.service';
 })
 export class MyOrdersPageComponent implements OnInit {
   public tab: Tab;
+  private _ordersList: Order[];
 
-  // constructor(private route: ActivatedRoute,
-  //             private ordersService: OrdersService) {
-  // }
+  constructor(private ordersService: OrdersService) {
+  }
 
 
   ngOnInit() {
+    this.ordersService.getAllUserOrders().subscribe(orders => this._ordersList = orders);
   }
 
 }

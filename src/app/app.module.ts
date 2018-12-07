@@ -12,6 +12,11 @@ import {MyOrdersPageComponent} from './my-orders-page/my-orders-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule} from '@angular/forms';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { AdminOrdersListComponent } from './admin-orders-list/admin-orders-list.component';
+import { AdminOrdersPageComponent } from './admin-orders-page/admin-orders-page.component';
+import { OrderDetailPageComponent } from './order-detail-page/order-detail-page.component';
+import { VerticalTabsPageComponent } from './vertical-tabs-page/vertical-tabs-page.component';
+import { AllUserOrdersPageComponent } from './all-user-orders-page/all-user-orders-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     OrdersListComponent,
     AllUserOrdersComponent,
     MyOrdersPageComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    AdminOrdersListComponent,
+    AdminOrdersPageComponent,
+    OrderDetailPageComponent,
+    VerticalTabsPageComponent,
+    AllUserOrdersPageComponent
   ],
   imports: [
     BrowserModule,

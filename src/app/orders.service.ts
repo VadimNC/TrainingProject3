@@ -15,10 +15,16 @@ export class OrdersService {
       createdWhen: '01/01/2018',
       comments: 'Це дліІІІІІІІІІінющий коментар, але якщо на нього навести.. Якщо на нього навести - він з`являється у розгорнотому вигляді і Ви можете побачити його увесь! Будь ласка!'
     },
-    {id: 2, name: 'order-2', status: 'Open', createdWhen: '02/01/2018', comments: 'SDFGHJKL ryisfls;dfus ;lsf;lsd;sdfug ;sdflsudf '},
+    {
+      id: 2,
+      name: 'order-2',
+      status: 'Open',
+      createdWhen: '02/01/2018',
+      comments: 'SDFGHJKL ryisfls;dfus ;lsf;lsd;sdfug ;sdflsudf '
+    },
     {id: 3, name: 'order-3', status: 'Closed', createdWhen: '03/01/2018', comments: ''},
     {id: 4, name: 'order-4', status: 'Open', createdWhen: '05/01/2018', comments: ''},
-    {id: 5, name: 'order-5', status: 'In-Progress', createdWhen: '11/01/2018', comments: ''},
+    {id: 5, name: 'order-5', status: 'Closed', createdWhen: '11/01/2018', comments: ''},
     {id: 6, name: 'order-6', status: 'Open', createdWhen: '16/01/2018', comments: ''},
     {id: 7, name: 'order-7', status: 'Open', createdWhen: '21/01/2018', comments: ''},
     {id: 8, name: 'order-8', status: 'Open', createdWhen: '02/01/2018', comments: ''},
