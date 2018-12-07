@@ -1,0 +1,26 @@
+<!--<div>ADMIN Orders Page</div>-->
+<!--<app-orders-list [orders]="_ordersList" *ngTemplateOutlet="dynamicButton"></app-orders-list>-->
+<!--<ng-template #dynamicButton><button>КНОПКА</button></ng-template>-->
+
+
+<div>ADMIN Orders Page</div>
+<app-orders-list
+  [inputColumn]="_columnsPlus"
+  [orders]="_ordersList"
+  [dynamicColumn]="dynamicButton"
+>
+</app-orders-list>
+<ng-template #dynamicButton>
+  <ul class="menu">
+    <li><a href=#>Button</a>
+      <ul class="submenu">
+        <li><a href=#>user 1</a></li>
+        <li><a href=#>user 2</a></li>
+        <li><a href=#>user 3</a></li>
+      </ul>
+    </li>
+  </ul>
+
+ </ng-template>
+
+
