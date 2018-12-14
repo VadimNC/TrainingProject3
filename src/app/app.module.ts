@@ -11,12 +11,16 @@ import {AllUserOrdersComponent} from './all-user-orders/all-user-orders.componen
 import {MyOrdersPageComponent} from './my-orders-page/my-orders-page.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule} from '@angular/forms';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
-import { AdminOrdersListComponent } from './admin-orders-list/admin-orders-list.component';
-import { AdminOrdersPageComponent } from './admin-orders-page/admin-orders-page.component';
-import { OrderDetailPageComponent } from './order-detail-page/order-detail-page.component';
-import { VerticalTabsPageComponent } from './vertical-tabs-page/vertical-tabs-page.component';
-import { AllUserOrdersPageComponent } from './all-user-orders-page/all-user-orders-page.component';
+import {OrderDetailComponent} from './order-detail/order-detail.component';
+import {AdminOrdersListComponent} from './admin-orders-list/admin-orders-list.component';
+import {AdminOrdersPageComponent} from './admin-orders-page/admin-orders-page.component';
+import {OrderDetailPageComponent} from './order-detail-page/order-detail-page.component';
+import {VerticalTabsPageComponent} from './vertical-tabs-page/vertical-tabs-page.component';
+import {AllUserOrdersPageComponent} from './all-user-orders-page/all-user-orders-page.component';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './api/in-memory-data.service';
+import { FormLoginComponent } from './form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,18 @@ import { AllUserOrdersPageComponent } from './all-user-orders-page/all-user-orde
     AdminOrdersPageComponent,
     OrderDetailPageComponent,
     VerticalTabsPageComponent,
-    AllUserOrdersPageComponent
+    AllUserOrdersPageComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgxPaginationModule
+    // ,
+    // HttpClientModule,
+    // // Delete this string when real api wil be ready
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})
   ],
   providers: [],
   bootstrap: [AppComponent]

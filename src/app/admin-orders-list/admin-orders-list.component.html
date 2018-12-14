@@ -1,26 +1,34 @@
-<!--<div>ADMIN Orders Page</div>-->
-<!--<app-orders-list [orders]="_ordersList" *ngTemplateOutlet="dynamicButton"></app-orders-list>-->
-<!--<ng-template #dynamicButton><button>КНОПКА</button></ng-template>-->
-
-
 <div>ADMIN Orders Page</div>
 <app-orders-list
   [inputColumn]="_columnsPlus"
   [orders]="_ordersList"
-  [dynamicColumn]="dynamicButton"
+  [dynamicColumns]="_columnTemplate"
 >
+
 </app-orders-list>
+
 <ng-template #dynamicButton>
   <ul class="menu">
-    <li><a href=#>Button</a>
+    <li><a href=#>Assign #1</a>
       <ul class="submenu">
-        <li><a href=#>user 1</a></li>
-        <li><a href=#>user 2</a></li>
-        <li><a href=#>user 3</a></li>
+        <li *ngFor="let user of usersList"
+            (click)="_orderUpdate(user)">
+          {{user.userName | uppercase}}
+        </li>
       </ul>
     </li>
   </ul>
+</ng-template>
 
- </ng-template>
-
-
+<ng-template #dynamicButton2>
+  <ul class="menu">
+    <li><a href=#>Assign #2</a>
+      <ul class="submenu">
+        <li *ngFor="let user of usersList"
+            (click)="_orderUpdate(user)">
+          {{user.userName | uppercase}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ng-template>

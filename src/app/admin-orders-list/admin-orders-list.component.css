@@ -23,7 +23,7 @@ ul.menu > li > a {
   display: block;
   padding: 10px;
   color: white;
-  background-color: cornflowerblue;
+  background-color: #607D8B;
   text-decoration: none;
 }
 ul.menu > li > a:hover {
@@ -36,7 +36,7 @@ ul.submenu {
   top: 0;
   left: -120px;
   background-color: white;
-  border: 1px solid cornflowerblue;
+  border: 1px solid #607D8B;
 }
 ul.submenu > li {
   display: block;
@@ -45,7 +45,7 @@ ul.submenu > li > a {
   display: block;
   padding: 10px;
   color: white;
-  background-color: cornflowerblue;
+  background-color: #607D8B;
   text-decoration: none;
 }
 ul.submenu > li > a:hover {
@@ -53,4 +53,29 @@ ul.submenu > li > a:hover {
 }
 ul.menu > li:hover > ul.submenu {
   display: block;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

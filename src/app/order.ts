@@ -3,6 +3,7 @@ export class Order {
               public name: string,
               public status: string,
               public createdWhen: string,
-              public comments: string) {
+              public comments: string,
+              public assigned: string) {
   }
 }

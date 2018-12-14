@@ -27,36 +27,50 @@
       <!--</tbody>-->
 
       <tbody>
-      <tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage: p} " >
-        <!--routerLink="/detail/{{item.id}}"-->
-        <td *ngFor="let ttt of inputColumn"  routerLink="/detail/{{item.id}}">
-          <div *ngIf="item[ttt.id]; else dynamicTemplate"  >{{item[ttt.id] }}</div>
+      <tr *ngFor="let item of orders | paginate: {itemsPerPage:12, currentPage:  p} " routerLink="/detail/{{item.id}}">
 
-          <div *ngIf="ttt.comments==='Comments'; else blockClosed2">
-            <div class="tooltip">{{item.comments | slice:0:60}}
-              <span class="tooltiptext">{{item.comments}}</span>
+        <td *ngFor="let cell of inputColumn">
+          <div *ngIf="item[cell.id]">
+            <div *ngIf="item.status==='Open'; else blockColor"><span class="table__status_green"> </span>
+              {{item[cell.id] }}
             </div>
-            <ng-template #blockClosed2><span> </span></ng-template>
+            <ng-template #blockColor><span class="table__status_red"> {{ item[cell.id]}} </span></ng-template>
           </div>
 
-          <div *ngIf="ttt.name==='Status'">
-          <div *ngIf="item.status==='Open'; else blockClosed">
-          <span class="table__status_green">{{item.status}}</span>
-          </div>
-          <ng-template #blockClosed><span class="table__status_red">{{item.status}}</span></ng-template>
+
+          <!--<div *ngIf="!item[cell.id] && _columnsPlus[0].name">-->
+          <!--<ng-template [ngTemplateOutlet]="dynamicColumns"></ng-template>-->
+          <!--</div>-->
+
+          <div *ngFor="let kkk of dynamicColumns">
+            <div *ngIf="!item[cell.id] && cell.name===kkk.name">
+              <ng-template [ngTemplateOutlet]="kkk.template"></ng-template>
+            </div>
           </div>
 
+          <!--<div *ngIf="!item[cell.id] && cell.name===ordersService._columnsPlus[6].name">-->
+          <!--<ng-template [ngTemplateOutlet]="dynamicColumns2"></ng-template>-->
+          <!--</div>-->
+
+
+          <!--<div *ngIf="!item[cell.id] && cell.name==='button'">-->
+          <!--<ng-template [ngTemplateOutlet]="dynamicColumns">-->
+          <!--</ng-template>-->
+          <!--</div>-->
+          <!--<div *ngIf="!item[cell.id] && cell.name==='button2'">-->
+          <!--<ng-template [ngTemplateOutlet]="dynamicColumns2">-->
+          <!--</ng-template>-->
+          <!--</div>-->
 
 
         </td>
-        <ng-template #dynamicTemplate [ngTemplateOutlet]="dynamicColumn"> </ng-template>
       </tr>
       </tbody>
 
     </table>
-
+    <!--<app-admin-orders-list [myStr]="myStr">{{myStr}}</app-admin-orders-list>-->
   </div>
   <pagination-controls (pageChange)="p =$event"></pagination-controls>
 </div>
 
-<!--| paginate: {itemsPerPage:12, currentPage: p}" routerLink="/detail/{{item.id}}-->
+

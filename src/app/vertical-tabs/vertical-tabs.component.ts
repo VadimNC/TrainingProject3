@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SessionService} from '../session.service';
 import {Tab} from '../tab';
 import {User} from '../user';
-import {USERS} from '../mock-users';
+
 
 @Component({
   selector: 'app-vertical-tabs',
@@ -11,8 +11,8 @@ import {USERS} from '../mock-users';
 })
 export class VerticalTabsComponent implements OnInit {
   items: Tab[] = [];
-  public selectedRole: string = 'ADMIN';
-  public selectedTab: Tab;
+  public selectedRole: number = 222;
+
 
   constructor(private sessionService: SessionService) {
   }

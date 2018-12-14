@@ -39,6 +39,20 @@ table, th, td {
   /*width: 10em !important;*/
 /*}*/
 
+th{
+  width: 20%;
+
+}
+
+td{
+  color: green;
+}
+/*table td:first-child{*/
+  /*width: 5%;*/
+/*}*/
+/*table td:last-child{*/
+  /*width: 40%;*/
+/*}*/
 .tooltip .tooltiptext {
   visibility: hidden;
   width: auto;
@@ -61,4 +75,5 @@ table, th, td {
 }
 .table__status_red{
   color: red;
+
 }

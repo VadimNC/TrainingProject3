@@ -1,0 +1,17 @@
+<div class="container">
+  <form (ngSubmit)="onSubmited()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">Имя:</label>
+      <input #spy #firstName="ngModel" required type="text" [(ngModel)]="user.firstName" name="firstName" class="form-control" id="firstName">
+      <div class="alert alert-danger" [hidden]="firstName.valid || firstName.pristine">
+        Поле 'Имя' обязательно для заполнения
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Фамилия:</label>
+      <input type="text" [(ngModel)]="user.lastName" name="lastName" class="form-control" id="lastName">
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Сохранить</button>
+    <button type="reset" (click)="cleanButtonClicked();" class="btn btn-light">Очистить</button>
+  </form>
+</div>

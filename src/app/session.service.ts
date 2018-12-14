@@ -10,13 +10,13 @@ export class SessionService {
   private tabFilter: Tab[];
 
   private dataTabs: Tab[] = [
-    {myId: 1, name: 'My Orders', myRole: 'USER', url: '/my-orders'},
-    {myId: 2, name: 'All My Orders', myRole: 'ADMIN', url: '/all-my-orders'},
-    {myId: 3, name: 'My Page-3', myRole: 'KEEPER', url: ''},
-    {myId: 4, name: 'My Page-4', myRole: 'USER', url: ''},
-    {myId: 5, name: 'My Page-5', myRole: 'ADMIN', url: ''},
-    {myId: 6, name: 'My Page-6', myRole: 'KEEPER', url: ''},
-    {myId: 7, name: 'My Page-7', myRole: 'USER', url: ''}
+    {myId: 1, name: 'My Orders', myRole: 111, url: '/my-orders'},
+    {myId: 2, name: 'All My Orders', myRole: 222, url: '/all-my-orders'},
+    {myId: 3, name: 'My Page-3', myRole: 333, url: ''},
+    {myId: 4, name: 'My Page-4', myRole: 111, url: ''},
+    {myId: 5, name: 'My Page-5', myRole: 222, url: ''},
+    {myId: 6, name: 'My Page-6', myRole: 333, url: ''},
+    {myId: 7, name: 'My Page-7', myRole: 111, url: ''}
   ]
 
   getTabsByRole(selectedRole): Tab[] {
